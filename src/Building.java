@@ -40,6 +40,16 @@ public class Building {
         return mResident;
     }
 
+    public int getNumberOfResidents(){
+        int num = 0;
+
+        if(mResident != null){
+            num = mResident.size();
+        }
+
+        return num;
+    }
+
     public void addResident(String resident) {
         mResident.add(resident);
     }
