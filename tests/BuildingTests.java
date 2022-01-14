@@ -89,4 +89,21 @@ public class BuildingTests {
         assertEquals("r2", gottenResidents.get(0));
     }
 
+    @Test
+    void testRemovingResidentFromABuildingThatTheResidentIsNotIn(){
+        String[] residents = {"r1", "r2"};
+        Building building = new Building(1, residents);
+
+        building.removeResident("r3");
+
+        List<String> gottenResidents = building.getResident();
+
+        assertEquals(1, building.getId());
+        int i = 0;
+        for (String s: residents) {
+            assertEquals(s, gottenResidents.get(i));
+            i++;
+        }
+    }
+
 }
