@@ -124,4 +124,33 @@ public class BuildingTests {
         assertEquals(3, building.getNumberOfResidents());
     }
 
+    @Test
+    void testGetRightNumberOfResidentsOfABuildingAfterRemovingAResident(){
+        String[] residents = {"r1", "r2", "r3"};
+        String[] lesserResidents = {"r1", "r3"};
+        Building building = new Building(1, residents);
+
+        List<String> gottenResidents = building.getResident();
+
+
+        assertEquals(1, building.getId());
+        int i = 0;
+        for (String s: residents) {
+            assertEquals(s, gottenResidents.get(i));
+            i++;
+        }
+        assertEquals(3, building.getNumberOfResidents());
+
+        building.removeResident("r2");
+
+        List<String> gottenLesserResidents = building.getResident();
+
+        i = 0;
+        for (String s: lesserResidents) {
+            assertEquals(s, gottenLesserResidents.get(i));
+            i++;
+        }
+        assertEquals(2, building.getNumberOfResidents());
+    }
+
 }
