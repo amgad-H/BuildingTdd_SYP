@@ -16,6 +16,9 @@ public class Building {
         mId = id;
         mResident = resident;
     }
+    Building(int id, String[] residents){
+        this(id, residents[0]);
+    }
 
     public int getId() {
         return mId;
