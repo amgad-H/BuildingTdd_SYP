@@ -11,20 +11,22 @@
 
 public class Building {
     private int mId;
-    private String mResident;
+    private String[] mResident;
     Building(int id, String resident){
         mId = id;
-        mResident = resident;
+        String[] oneResident = {resident};
+        mResident = oneResident;
     }
     Building(int id, String[] residents){
-        this(id, residents[0]);
+        mId = id;
+        mResident = residents;
     }
 
     public int getId() {
         return mId;
     }
 
-    public String getResident() {
+    public String[] getResident() {
         return mResident;
     }
 }
