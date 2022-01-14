@@ -76,4 +76,17 @@ public class BuildingTests {
         }
     }
 
+    @Test
+    void testRemovingResidentFromABuilding(){
+        String[] residents = {"r1", "r2"};
+        Building building = new Building(1, residents);
+
+        building.removeResident("r1");
+
+        List<String> gottenResidents = building.getResident();
+
+        assertEquals(1, building.getId());
+        assertEquals("r2", gottenResidents.get(0));
+    }
+
 }

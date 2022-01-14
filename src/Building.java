@@ -43,4 +43,8 @@ public class Building {
     public void addResident(String resident) {
         mResident.add(resident);
     }
+
+    public void removeResident(String resident) {
+        mResident.remove(resident);
+    }
 }
